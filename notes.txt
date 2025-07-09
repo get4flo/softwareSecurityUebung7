@@ -1,0 +1,14 @@
+# probably House of Tangerine attack
+
+# local execution in devcontainer with debugging
+python3 exploit.py LOCAL GDB
+python3 exploit.py LOCAL LOCAL_LIBC GDB
+
+# get libc version
+./ld-linux-x86-64.so.2 --library-path . ./libc.so.6 --version
+
+# check for debug infor and if stripped
+file ./homework
+
+# generate exploit template
+pwn template --host homework --port 1337 ./homework
