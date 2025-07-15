@@ -12,3 +12,11 @@ file ./homework
 
 # generate exploit template
 pwn template --host homework --port 1337 ./homework
+
+# check for one gadget -> do via gcloud vm to avoid local installation of one_gadget
+one_gadget ./libc.so.41
+
+# break in GDB
+break free
+break __printf_chk
+
